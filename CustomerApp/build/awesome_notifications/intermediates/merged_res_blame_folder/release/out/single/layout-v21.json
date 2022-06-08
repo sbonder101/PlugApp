@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/awesome_notifications/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/ea69ee82fab3b77aa8c28b5a7221b178/core-1.7.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/awesome_notifications/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/ea69ee82fab3b77aa8c28b5a7221b178/core-1.7.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/awesome_notifications/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/ea69ee82fab3b77aa8c28b5a7221b178/core-1.7.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/awesome_notifications/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/ea69ee82fab3b77aa8c28b5a7221b178/core-1.7.0/res/layout-v21/notification_action.xml"
+    }
+]

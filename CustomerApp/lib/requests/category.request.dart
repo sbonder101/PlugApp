@@ -1,0 +1,33 @@
+import 'package:plug/constants/api.dart';
+import 'package:plug/models/api_response.dart';
+import 'package:plug/models/category.dart';
+import 'package:plug/services/http.service.dart';
+
+class CategoryRequest extends HttpService {
+  //
+  Future<List<Category>> categories({
+    int vendorTypeId,
+    int page = 0,
+    int full = 0,
+  }) async {
+    final apiResult = await get(
+      //
+      Api.categories,
+      queryParameters: {
+        "vendor_type_id": vendorTypeId,
+        "page": page,
+        "full": full,
+      },
+    );
+
+    final apiResponse = ApiResponse.fromResponse(apiResult);
+
+    if (apiResponse.allGood) {
+      return apiResponse.data
+          .map((jsonObject) => Category.fromJson(jsonObject))
+          .toList();
+    } else {
+      throw apiResponse.message;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_open_exit.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_open_exit.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_close_exit.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_close_exit.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_close_enter.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_fade_enter.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_open_enter.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_open_enter.xml"
+    },
+    {
+        "merged": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/qr_code_scanner/intermediates/res/merged/release/animator/fragment_fade_exit.xml",
+        "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/4cbae7a21b906bfa10052800cc181472/fragment-1.3.4/res/animator/fragment_fade_exit.xml"
+    }
+]
