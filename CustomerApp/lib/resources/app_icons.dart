@@ -7,6 +7,7 @@ class AppIcons {
   static const String bell = 'assets/images/icons/bell.png';
   static const String wallet = 'assets/images/icons/wallet.png';
   static const String communicate = 'assets/images/icons/communicate.png';
+  static const String livesupport = 'assets/images/icons/live-chat.png';
   static const String compliant = 'assets/images/icons/compliant.png';
   static const String favourite = 'assets/images/icons/favourite.png';
   static const String password = 'assets/images/icons/password.png';

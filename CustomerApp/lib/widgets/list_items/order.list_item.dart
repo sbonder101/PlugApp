@@ -7,6 +7,7 @@ import 'package:plug/models/order.dart';
 import 'package:plug/constants/app_strings.dart';
 import 'package:plug/utils/ui_spacer.dart';
 import 'package:plug/widgets/buttons/custom_button.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -81,7 +82,8 @@ class OrderListItem extends StatelessWidget {
                       child:
                           "${order.paymentMethod?.name}".text.sm.medium.make(),
                     ).expand(),
-                    "${order.formattedDate}".text.sm.make(),
+                    VxTextBuilder(Jiffy(order.createdAt).format('dd E, MMM y')).sm.make(),
+                    //EEEE dd MMM yyyy
                   ],
                 ),
               ],

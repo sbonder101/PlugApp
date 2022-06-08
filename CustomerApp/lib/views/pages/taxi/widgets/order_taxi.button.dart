@@ -3,6 +3,7 @@ import 'package:plug/constants/app_strings.dart';
 import 'package:plug/extensions/string.dart';
 import 'package:plug/view_models/taxi.vm.dart';
 import 'package:plug/widgets/buttons/custom_button.dart';
+import 'package:plug/widgets/currency_hstack.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -13,6 +14,12 @@ class OrderTaxiButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
+    final currencySymbol = (vm.selectedVehicleType != null &&
+            vm.selectedVehicleType.currency != null
+        ? vm.selectedVehicleType.currency.symbol
+        : AppStrings.currencySymbol);
+    //
     return SafeArea(
       top: false,
       child: Visibility(
@@ -23,12 +30,20 @@ class OrderTaxiButton extends StatelessWidget {
             [
               "Order Now".tr().text.make(),
               " ".text.make(),
-              "${(vm.selectedVehicleType != null && vm.selectedVehicleType.currency != null ? vm.selectedVehicleType.currency.symbol : AppStrings.currencySymbol)} ${vm.total}"
-                  .currencyFormat()
-                  .text
-                  .semiBold
-                  .xl
-                  .make(),
+              CurrencyHStack(
+                [
+                  "${currencySymbol} "
+                      .text
+                      .semiBold
+                      .xl
+                      .make(),
+                  "${vm.total.currencyValueFormat()}"
+                      .text
+                      .semiBold
+                      .xl
+                      .make(),
+                ],
+              ),
             ],
           ),
           onPressed: vm.selectedVehicleType != null ? vm.processNewOrder : null,

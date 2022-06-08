@@ -38,6 +38,8 @@ class Api {
   static const bestVendors = "/vendors?type=best";
 
   static const search = "/search";
+  static const tags = "/tags";
+  static const searchData = "/search/data";
   static const favourites = "/favourites";
 
 
@@ -87,4 +89,10 @@ class Api {
     final webUrl = baseUrl.replaceAll('/api', '');
     return "$webUrl/pages/contact";
   }
+
+  static String get inappSupport {
+    final webUrl = baseUrl.replaceAll('/api', '');
+    return "$webUrl/support/chat";
+  }
+
 }

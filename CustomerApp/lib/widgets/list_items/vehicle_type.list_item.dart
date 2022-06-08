@@ -5,6 +5,7 @@ import 'package:plug/extensions/string.dart';
 import 'package:plug/models/vehicle_type.dart';
 import 'package:plug/utils/ui_spacer.dart';
 import 'package:plug/view_models/taxi.vm.dart';
+import 'package:plug/widgets/currency_hstack.dart';
 import 'package:plug/widgets/custom_image.view.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -41,18 +42,23 @@ class VehicleTypeListItem extends StatelessWidget {
                 .maxLines(1)
                 .overflow(TextOverflow.ellipsis)
                 .make(),
-            "${vehicleType.currency != null ? vehicleType.currency.symbol : AppStrings.currencySymbol}${vehicleType.total}"
-                .currencyFormat()
-                .text
-                .fontWeight(selected ? FontWeight.w600 : FontWeight.w400)
-                .make(),
+            CurrencyHStack([
+              "${vehicleType.currency != null ? vehicleType.currency.symbol : AppStrings.currencySymbol}"
+                  .text
+                  .fontWeight(selected ? FontWeight.w600 : FontWeight.w400)
+                  .make(),
+              "${vehicleType.total}"
+                  .currencyValueFormat()
+                  .text
+                  .fontWeight(selected ? FontWeight.w600 : FontWeight.w400)
+                  .make(),
+            ]),
           ],
         ),
       ],
       alignment: MainAxisAlignment.center,
       // crossAlignment: CrossAxisAlignment.center,
     )
-        
         .box
         .p8
         // .px12

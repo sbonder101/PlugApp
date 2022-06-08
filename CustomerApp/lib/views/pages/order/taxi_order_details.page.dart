@@ -9,6 +9,7 @@ import 'package:plug/views/pages/order/widgets/order_payment_info.view.dart';
 import 'package:plug/widgets/base.page.dart';
 import 'package:plug/widgets/busy_indicator.dart';
 import 'package:plug/widgets/cards/order_summary.dart';
+import 'package:plug/widgets/currency_hstack.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:measure_size/measure_size.dart';
 import 'package:stacked/stacked.dart';
@@ -74,12 +75,20 @@ class _TaxiOrderDetailPageState extends State<TaxiOrderDetailPage> {
                                     ],
                                   ).expand(),
                                   //total amount
-                                  "${vm.order.taxiOrder.currency != null ? vm.order.taxiOrder.currency.symbol : AppStrings.currencySymbol} ${vm.order.total ?? 0.00}".currencyFormat()
-                                      .text
-                                      .medium
-                                      .lg
-                                      .make()
-                                      .px4(),
+                                  CurrencyHStack(
+                                    [
+                                      "${vm.order.taxiOrder.currency != null ? vm.order.taxiOrder.currency.symbol : AppStrings.currencySymbol}"
+                                          .text
+                                          .medium
+                                          .lg
+                                          .make(),
+                                      "${(vm.order.total ?? 0.00).currencyValueFormat()}"
+                                          .text
+                                          .medium
+                                          .lg
+                                          .make()
+                                    ],
+                                  ).px4(),
                                 ],
                               ).pOnly(bottom: Vx.dp20),
 

@@ -57,30 +57,31 @@ class MyBaseViewModel extends BaseViewModel with UpdateService {
   void pickDeliveryAddress() {
     //
     showModalBottomSheet(
-        context: viewContext,
-        backgroundColor: Colors.transparent,
-        isScrollControlled: true,
-        builder: (context) {
-          return DeliveryAddressPicker(
-            allowOnMap: true,
-            onSelectDeliveryAddress: (mDeliveryaddress) {
-              viewContext.pop();
-              deliveryaddress = mDeliveryaddress;
-              notifyListeners();
+      context: viewContext,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return DeliveryAddressPicker(
+          allowOnMap: true,
+          onSelectDeliveryAddress: (mDeliveryaddress) {
+            viewContext.pop();
+            deliveryaddress = mDeliveryaddress;
+            notifyListeners();
 
-              //
-              final address = Address(
-                coordinates: Coordinates(
-                    deliveryaddress.latitude, deliveryaddress.longitude),
-                addressLine: deliveryaddress.address,
-              );
-              //
-              LocationService.currenctAddress = address;
-              //
-              LocationService.currenctAddressSubject.sink.add(address);
-            },
-          );
-        });
+            //
+            final address = Address(
+              coordinates: Coordinates(
+                  deliveryaddress.latitude, deliveryaddress.longitude),
+              addressLine: deliveryaddress.address,
+            );
+            //
+            LocationService.currenctAddress = address;
+            //
+            LocationService.currenctAddressSubject.sink.add(address);
+          },
+        );
+      },
+    );
   }
 
   //

@@ -75,6 +75,12 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                     //
                     MenuItem(
+                      title: "Live Support".tr(),
+                      onPressed: model.openLivesupport,
+                      ic: AppIcons.livesupport,
+                    ),
+                    //
+                    MenuItem(
                       title: "Language".tr(),
                       divider: false,
                       ic: AppIcons.translation,

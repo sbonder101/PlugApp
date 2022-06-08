@@ -39,15 +39,15 @@ class OrderSummary extends StatelessWidget {
             .py2(),
         AmountTile(
           "Discount".tr(),
-          "- " + "$currencySymbol ${discount ?? 0}".currencyFormat(),
+          "- " + "$currencySymbol ${discount ?? 0}".currencyFormat(currencySymbol),
         ).py2(),
         AmountTile(
           "Delivery Fee".tr(),
-          "+ " + "$currencySymbol ${deliveryFee ?? 0}".currencyFormat(),
+          "+ " + "$currencySymbol ${deliveryFee ?? 0}".currencyFormat(currencySymbol),
         ).py2(),
         AmountTile(
           "Tax (%s)".tr().fill(["${vendorTax ?? 0}%"]),
-          "+ " + " $currencySymbol ${tax ?? 0}".currencyFormat(),
+          "+ " + " $currencySymbol ${tax ?? 0}".currencyFormat(currencySymbol),
         ).py2(),
         DottedLine(dashColor: context.textTheme.bodyText1.color).py8(),
         Visibility(
@@ -56,7 +56,7 @@ class OrderSummary extends StatelessWidget {
             [
               AmountTile(
                 "Driver Tip".tr(),
-                "+ " + "$currencySymbol ${driverTip ?? 0}".currencyFormat(),
+                "+ " + "$currencySymbol ${driverTip ?? 0}".currencyFormat(currencySymbol),
               ).py2(),
               DottedLine(dashColor: context.textTheme.bodyText1.color).py8(),
             ],
@@ -65,7 +65,7 @@ class OrderSummary extends StatelessWidget {
         AmountTile(
           "Total Amount".tr(),
           "$currencySymbol ${total ?? 0}"
-              .currencyFormat(),
+              .currencyFormat(currencySymbol),
         ),
       ],
     );

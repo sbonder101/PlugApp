@@ -206,7 +206,7 @@ class ProductDetailsViewModel extends MyBaseViewModel {
   }
 
   //
-  Future<bool> addToCart({bool force = false}) async {
+  Future<bool> addToCart({bool force = false, bool skip = false}) async {
     //
     final cart = Cart();
     cart.price = subTotal;
@@ -227,27 +227,29 @@ class ProductDetailsViewModel extends MyBaseViewModel {
         //
         await CartServices.addToCart(cart);
         //
-        done = await CoolAlert.show(
-          context: viewContext,
-          title: "Add to cart".tr(),
-          text: "%s Added to cart".tr().fill([product.name]),
-          type: CoolAlertType.success,
-          showCancelBtn: true,
-          confirmBtnColor: AppColor.primaryColor,
-          confirmBtnText: "GO TO CART".tr(),
-          confirmBtnTextStyle: viewContext.textTheme.bodyText1.copyWith(
-            fontSize: Vx.dp12,
-            color: Colors.white,
-          ),
-          onConfirmBtnTap: () async {
-            //
-            viewContext.pop(true);
-            viewContext.nextPage(CartPage());
-          },
-          cancelBtnText: "Keep Shopping".tr(),
-          cancelBtnTextStyle:
-              viewContext.textTheme.bodyText1.copyWith(fontSize: Vx.dp12),
-        );
+        if (!skip) {
+          done = await CoolAlert.show(
+            context: viewContext,
+            title: "Add to cart".tr(),
+            text: "%s Added to cart".tr().fill([product.name]),
+            type: CoolAlertType.success,
+            showCancelBtn: true,
+            confirmBtnColor: AppColor.primaryColor,
+            confirmBtnText: "GO TO CART".tr(),
+            confirmBtnTextStyle: viewContext.textTheme.bodyText1.copyWith(
+              fontSize: Vx.dp12,
+              color: Colors.white,
+            ),
+            onConfirmBtnTap: () async {
+              //
+              viewContext.pop(true);
+              viewContext.nextPage(CartPage());
+            },
+            cancelBtnText: "Keep Shopping".tr(),
+            cancelBtnTextStyle:
+                viewContext.textTheme.bodyText1.copyWith(fontSize: Vx.dp12),
+          );
+        }
       } else {
         //
         done = await CoolAlert.show(
@@ -282,7 +284,7 @@ class ProductDetailsViewModel extends MyBaseViewModel {
   }
 
   buyNow() async {
-    await addToCart();
+    await addToCart(skip: true);
     viewContext.pop();
     viewContext.nextPage(CartPage());
   }

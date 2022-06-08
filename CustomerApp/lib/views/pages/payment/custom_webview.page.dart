@@ -5,7 +5,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:plug/widgets/base.page.dart';
 import 'package:i18n_extension/i18n_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CustomWebviewPage extends StatefulWidget {
@@ -131,9 +131,9 @@ class _CustomWebviewPageState extends State<CustomWebviewPage> {
                 "javascript",
                 "about"
               ].contains(uri.scheme)) {
-                if (await canLaunch(url)) {
+                if (await canLaunchUrlString(url)) {
                   // Launch the App
-                  await launch(
+                  await launchUrlString(
                     url,
                   );
                   // and cancel the request

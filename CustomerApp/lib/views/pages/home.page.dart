@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:plug/constants/app_colors.dart';
+import 'package:plug/constants/app_upgrade_settings.dart';
 import 'package:plug/models/search.dart';
 import 'package:plug/services/location.service.dart';
 import 'package:plug/utils/utils.dart';
@@ -12,6 +15,7 @@ import 'package:plug/widgets/base.page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:stacked/stacked.dart';
+import 'package:upgrader/upgrader.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'order/orders.page.dart';
@@ -47,20 +51,29 @@ class _HomePageState extends State<HomePage> {
         viewModelBuilder: () => vm,
         builder: (context, model, child) {
           return BasePage(
-            body: PageView(
-              controller: model.pageViewController,
-              onPageChanged: model.onPageChanged,
-              children: [
-                model.homeView,
-                OrdersPage(),
-                SearchPage(
-                  search: Search(
-                    showType: 4,
+            body: UpgradeAlert(
+              upgrader: Upgrader(
+                showIgnore: !AppUpgradeSettings.forceUpgrade(),
+                shouldPopScope: () => !AppUpgradeSettings.forceUpgrade(),
+                dialogStyle: Platform.isIOS
+                    ? UpgradeDialogStyle.cupertino
+                    : UpgradeDialogStyle.material,
+              ),
+              child: PageView(
+                controller: model.pageViewController,
+                onPageChanged: model.onPageChanged,
+                children: [
+                  model.homeView,
+                  OrdersPage(),
+                  SearchPage(
+                    search: Search(
+                      showType: 4,
+                    ),
+                    showCancel: false,
                   ),
-                  showCancel: false,
-                ),
-                ProfilePage(),
-              ],
+                  ProfilePage(),
+                ],
+              ),
             ),
             fab: SizedBox(
               height: 40,
@@ -72,7 +85,9 @@ class _HomePageState extends State<HomePage> {
                   FlutterIcons.shopping_cart_faw,
                   color: Colors.white,
                 ).badge(
-                  position: Utils.isArabic ? VxBadgePosition.leftTop: VxBadgePosition.rightTop,
+                  position: Utils.isArabic
+                      ? VxBadgePosition.leftTop
+                      : VxBadgePosition.rightTop,
                   count: model.totalCartItems,
                   color: Colors.white,
                   textStyle: context.textTheme.bodyText1?.copyWith(

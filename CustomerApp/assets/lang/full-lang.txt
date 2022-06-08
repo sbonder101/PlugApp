@@ -641,3 +641,8 @@ Total Price:
 Quantity:
 Seller:
 Note: Long press option to see option full details
+Tags
+Filter by
+Sort by
+Ascending (A-Z)
+Descending (Z-A)

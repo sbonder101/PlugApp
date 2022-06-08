@@ -24,7 +24,6 @@ class CommerceProductDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
-  
 
     return VStack(
       [
@@ -96,9 +95,7 @@ class CommerceProductDetailsHeader extends StatelessWidget {
               loading: model.isBusy,
               color: Colors.transparent,
               child: Icon(
-                (!model.isAuthenticated()
-                        ? model.openLogin
-                        : !model.product.isFavourite)
+                (!model.isAuthenticated() || !model.product.isFavourite)
                     ? FlutterIcons.heart_o_faw
                     : FlutterIcons.heart_faw,
                 color: Colors.red,

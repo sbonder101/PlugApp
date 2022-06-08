@@ -1,5 +1,5 @@
 name: plug
-description: A new Flutter project.
+description: Plug Alcohol Delivery
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.5.5+3
+version: 1.5.6+1
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -109,6 +109,7 @@ dependencies:
   supercharged: ^2.0.0
   ticketview: ^1.0.0
   timelines: ^0.1.0
+  upgrader: ^4.1.1
   url_launcher: ^6.0.9
   velocity_x: ^3.3.0
   what3words: ^3.0.4

@@ -1,8 +1,9 @@
-// import 'dart:io';
-
+import 'dart:io';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:plug/view_models/base.view_model.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:plug/views/pages/payment/custom_webview.page.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyChromeSafariBrowser extends ChromeSafariBrowser {
   @override
@@ -24,26 +25,41 @@ class MyChromeSafariBrowser extends ChromeSafariBrowser {
 class PaymentViewModel extends MyBaseViewModel {
   refreshDataSet() {}
   //
-  openWebpageLink(String url) async {
-    //
-    try {
-      ChromeSafariBrowser browser = new MyChromeSafariBrowser();
-      await browser.open(
-        url: Uri.parse(url),
-        options: ChromeSafariBrowserClassOptions(
-          android: AndroidChromeCustomTabsOptions(
-            addDefaultShareMenuItem: false,
-            enableUrlBarHiding: true,
-          ),
-          ios: IOSSafariOptions(
-            barCollapsingEnabled: true,
-          ),
-        ),
-      );
-    } catch (error) {
-      await launch(url);
+  // openWebpageLink(String url) async {
+  //   //
+  //   try {
+  //     ChromeSafariBrowser browser = new MyChromeSafariBrowser();
+  //     await browser.open(
+  //       url: Uri.parse(url),
+  //       options: ChromeSafariBrowserClassOptions(
+  //         android: AndroidChromeCustomTabsOptions(
+  //           addDefaultShareMenuItem: false,
+  //           enableUrlBarHiding: true,
+  //         ),
+  //         ios: IOSSafariOptions(
+  //           barCollapsingEnabled: true,
+  //         ),
+  //       ),
+  //     );
+  //   } catch (error) {
+  //     await launchUrlString(url);
+  //   }
+  //   //
+  //   refreshDataSet();
+  // }
+
+  openWebpageLink(String url, {bool external = false}) async {
+    if (Platform.isIOS || external) {
+      await launchUrlString(url);
+      return;
     }
-    //
+    await viewContext.push(
+      (context) => CustomWebviewPage(
+        selectedUrl: url,
+      ),
+    );
+
     refreshDataSet();
   }
+
 }

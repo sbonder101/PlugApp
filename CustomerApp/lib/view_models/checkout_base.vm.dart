@@ -390,6 +390,10 @@ class CheckoutBaseViewModel extends PaymentViewModel {
       tip: driverTipTEC.text,
       note: noteTEC.text,
     );
+
+    //notify wallet view to update, just incase wallet was use for payment
+    AppService().refreshWalletBalance.add(true);
+
     //not error
     if (apiResponse.allGood) {
       //cash payment

@@ -1,4 +1,5 @@
 import 'package:plug/models/category.dart';
+import 'package:plug/models/tag.dart';
 import 'package:plug/models/vendor_type.dart';
 
 class Search {
@@ -13,6 +14,10 @@ class Search {
   bool showVendorsTag = false;
   bool showServicesTag = false;
   bool showProvidesTag = false;
+  String sort = "asc";
+  String minPrice;
+  String maxPrice;
+  List<Tag> tags = [];
 
   Search({
     this.type = "",

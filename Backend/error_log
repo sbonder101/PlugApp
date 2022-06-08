@@ -1,0 +1,2 @@
+[19-May-2022 20:17:03 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 8192 bytes) in /home/sbonder/plug.sboniso.org.za/vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php on line 77
+[19-May-2022 20:17:03 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 32768 bytes) in /home/sbonder/plug.sboniso.org.za/vendor/symfony/error-handler/Error/FatalError.php on line 1

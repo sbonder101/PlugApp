@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:plug/constants/app_routes.dart';
 import 'package:plug/models/category.dart';
+import 'package:plug/models/search_data.dart';
 import 'package:plug/models/vendor.dart';
 import 'package:plug/models/product.dart';
 import 'package:plug/models/search.dart';
 import 'package:plug/requests/search.request.dart';
 import 'package:plug/view_models/base.view_model.dart';
+import 'package:plug/view_models/search_filter.vm.dart';
 import 'package:plug/widgets/bottomsheets/search_filter.bottomsheet.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -15,6 +17,7 @@ class SearchViewModel extends MyBaseViewModel {
   SearchRequest _searchRequest = SearchRequest();
   ScrollController scrollController = ScrollController();
   RefreshController refreshController = RefreshController();
+  SearchData searchData;
   String keyword = "";
   String type = "";
   Category category;
@@ -25,6 +28,7 @@ class SearchViewModel extends MyBaseViewModel {
   int queryPage = 1;
   List<dynamic> searchResults = [];
   bool filterByProducts = true;
+  SearchFilterViewModel searchFilterVM;
 
   SearchViewModel(BuildContext context, this.search) {
     this.viewContext = context;
@@ -73,6 +77,11 @@ class SearchViewModel extends MyBaseViewModel {
 
   //
   void showFilterOptions() async {
+    
+    if (searchFilterVM == null) {
+      searchFilterVM = SearchFilterViewModel(viewContext, search);
+    }
+
     showModalBottomSheet(
       context: viewContext,
       isScrollControlled: true,
@@ -80,6 +89,7 @@ class SearchViewModel extends MyBaseViewModel {
       builder: (context) {
         return SearchFilterBottomSheet(
           search: search,
+          vm: searchFilterVM,
           onSubmitted: (mSearch) {
             search = mSearch;
             queryPage = 1;

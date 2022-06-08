@@ -5,7 +5,7 @@ import 'package:plug/models/order_stop.dart';
 import 'package:plug/utils/ui_spacer.dart';
 import 'package:plug/widgets/buttons/custom_button.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ParcelOrderStopListView extends StatefulWidget {
@@ -88,8 +88,8 @@ class _ParcelOrderStopListViewState extends State<ParcelOrderStopListView> {
                       shapeRadius: Vx.dp24,
                       onPressed: () async {
                         final phoneNumber = "tel:${widget.stop.phone}";
-                        if (await canLaunch(phoneNumber)) {
-                          launch(phoneNumber);
+                        if (await canLaunchUrlString(phoneNumber)) {
+                          launchUrlString(phoneNumber);
                         }
                       },
                     ).wh(Vx.dp64, Vx.dp40).p12()

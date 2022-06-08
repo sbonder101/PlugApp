@@ -189,6 +189,11 @@ class ProfileViewModel extends PaymentViewModel {
     openWebpageLink(url);
   }
 
+  openLivesupport() async {
+    final url = Api.inappSupport;
+    openWebpageLink(url);
+  }
+
   //
   changeLanguage() async {
     showModalBottomSheet(

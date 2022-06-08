@@ -4,25 +4,25 @@ import 'package:supercharged/supercharged.dart';
 
 extension NumberParsing on dynamic {
   //
-  String currencyFormat() {
+  String currencyFormat([String currencySymbol]) {
     final uiConfig = AppStrings.uiConfig;
     if (uiConfig != null && uiConfig["currency"] != null) {
       //
       final thousandSeparator = uiConfig["currency"]["format"] ?? ",";
       final decimalSeparator = uiConfig["currency"]["decimal_format"] ?? ".";
       final decimals = uiConfig["currency"]["decimals"];
-      final currencylOCATION = uiConfig["currency"]["location"] ?? 'right';
+      final currencylOCATION = uiConfig["currency"]["location"] ?? 'left';
       final decimalsValue = "".padLeft(decimals.toString().toInt(), "0");
 
       //
       //
       final values =
-          this.toString().split(" ").join("").split(AppStrings.currencySymbol);
+          this.toString().split(" ").join("").split(currencySymbol ??AppStrings.currencySymbol);
 
       //
       CurrencyFormatterSettings currencySettings = CurrencyFormatterSettings(
-        symbol: AppStrings.currencySymbol,
-        symbolSide: currencylOCATION.toLowerCase() == "right"
+        symbol: currencySymbol ?? AppStrings.currencySymbol,
+        symbolSide: currencylOCATION.toLowerCase() == "left"
             ? SymbolSide.left
             : SymbolSide.right,
         thousandSeparator: thousandSeparator,

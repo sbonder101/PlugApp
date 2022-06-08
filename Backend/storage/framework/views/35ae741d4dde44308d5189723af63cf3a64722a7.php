@@ -1,0 +1,1 @@
+<?php /**PATH /home/sbonder/plug.sboniso.org.za/resources/views/vendor/livewire-tables/stubs/modals.blade.php ENDPATH**/ ?>

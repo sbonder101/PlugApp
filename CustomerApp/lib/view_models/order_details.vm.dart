@@ -7,6 +7,7 @@ import 'package:plug/models/api_response.dart';
 import 'package:plug/models/order.dart';
 import 'package:plug/models/payment_method.dart';
 import 'package:plug/requests/order.request.dart';
+import 'package:plug/services/app.service.dart';
 import 'package:plug/view_models/checkout_base.vm.dart';
 import 'package:plug/views/pages/checkout/widgets/payment_methods.view.dart';
 import 'package:plug/widgets/bottomsheets/driver_rating.bottomsheet.dart';
@@ -14,7 +15,7 @@ import 'package:plug/widgets/bottomsheets/order_cancellation.bottomsheet.dart';
 import 'package:plug/widgets/bottomsheets/vendor_rating.bottomsheet.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:share/share.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -34,15 +35,15 @@ class OrderDetailsViewModel extends CheckoutBaseViewModel {
   }
 
   void callVendor() {
-    launch("tel:${order.vendor.phone}");
+    launchUrlString("tel:${order.vendor.phone}");
   }
 
   void callDriver() {
-    launch("tel:${order.driver.phone}");
+    launchUrlString("tel:${order.driver.phone}");
   }
 
   void callRecipient() {
-    launch("tel:${order.recipientPhone}");
+    launchUrlString("tel:${order.recipientPhone}");
   }
 
   chatVendor() {
@@ -245,9 +246,11 @@ class OrderDetailsViewModel extends CheckoutBaseViewModel {
         showModalBottomSheet(
       context: viewContext,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
       builder: (contex) {
         return PaymentMethodsView(this)
             .p20()
+            .scrollVertical()
             .box
             .color(contex.backgroundColor)
             .topRounded()
@@ -278,6 +281,9 @@ class OrderDetailsViewModel extends CheckoutBaseViewModel {
       } else {
         toastSuccessful("${apiResponse.body['message']}");
       }
+
+      //notify wallet view to update, just incase wallet was use for payment
+      AppService().refreshWalletBalance.add(true);
     } catch (error) {
       toastError("$error");
     }

@@ -254,6 +254,42 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "device_info_plus",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus-3.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus_linux",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus_linux-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus_macos",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus_macos-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus_platform_interface",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus_platform_interface-2.3.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus_web",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus_web-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "device_info_plus_windows",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/device_info_plus_windows-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4",
       "packageUri": "lib/",
@@ -1478,8 +1514,14 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "upgrader",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/upgrader-4.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "url_launcher",
-      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.20",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -1544,6 +1586,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "version",
+      "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/version-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vxstate",
       "rootUri": "file:///Users/snzimande/development/flutter/.pub-cache/hosted/pub.dartlang.org/vxstate-2.1.0",
       "packageUri": "lib/",
@@ -1592,7 +1640,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2022-05-24T19:46:59.214358Z",
+  "generated": "2022-06-08T20:25:46.816403Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }

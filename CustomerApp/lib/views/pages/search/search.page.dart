@@ -30,6 +30,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SearchViewModel>.reactive(
       viewModelBuilder: () => SearchViewModel(context, search),
+      disposeViewModel: false,
       builder: (context, model, child) {
         return BasePage(
           showCartView: showCancel,

@@ -9,7 +9,7 @@ import 'package:plug/models/order.dart';
 import 'package:plug/view_models/base.view_model.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class OrderTrackingViewModel extends MyBaseViewModel {
   //
@@ -229,6 +229,6 @@ class OrderTrackingViewModel extends MyBaseViewModel {
   }
 
   void callDriver() {
-    launch("tel:${order.driver.phone}");
+    launchUrlString("tel:${order.driver.phone}");
   }
 }

@@ -93,6 +93,8 @@ class MultipleCheckoutViewModel extends CheckoutBaseViewModel {
             //adding base fee
             mDeliveryFee += mVendor.baseDeliveryFee;
           }
+
+          checkout.deliveryFee = mDeliveryFee;
           updateOrderData(mVendor, deliveryFee: mDeliveryFee);
           //
         }

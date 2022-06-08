@@ -6,7 +6,7 @@ import 'package:plug/services/geocoder.service.dart';
 import 'package:plug/view_models/base.view_model.dart';
 import 'package:plug/views/pages/delivery_address/widgets/address_search.view.dart';
 import 'package:google_places_flutter/model/prediction.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:what3words/what3words.dart' hide Coordinates;
 import 'package:velocity_x/velocity_x.dart';
 import 'package:supercharged/supercharged.dart';
@@ -96,6 +96,6 @@ class BaseDeliveryAddressesViewModel extends MyBaseViewModel {
   }
 
   void shareWhat3words() {
-    launch("https://what3words.com/");
+    launchUrlString("https://what3words.com/");
   }
 }

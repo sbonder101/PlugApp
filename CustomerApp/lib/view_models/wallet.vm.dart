@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:plug/models/wallet.dart';
 import 'package:plug/models/wallet_transaction.dart';
 import 'package:plug/requests/wallet.request.dart';
+import 'package:plug/services/app.service.dart';
 import 'package:plug/view_models/payment.view_model.dart';
 import 'package:plug/views/pages/wallet/wallet_transfer.page.dart';
 import 'package:plug/widgets/bottomsheets/wallet_amount_entry.bottomsheet.dart';
@@ -21,9 +24,27 @@ class WalletViewModel extends PaymentViewModel {
   RefreshController refreshController = RefreshController();
   List<WalletTransaction> walletTransactions = [];
   int queryPage = 1;
+  StreamSubscription<bool> refreshWalletBalanceSub;
 
   //
   initialise() async {
+    await loadWalletData();
+
+    refreshWalletBalanceSub = AppService().refreshWalletBalance.listen(
+      (value) {
+        loadWalletData();
+      },
+    );
+  }
+
+  dispose() {
+    super.dispose();
+    refreshWalletBalanceSub?.cancel();
+  }
+
+
+  //
+  loadWalletData() async {
     await getWalletBalance();
     await getWalletTransactions();
   }

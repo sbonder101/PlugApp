@@ -6,6 +6,7 @@ import 'package:plug/constants/app_strings.dart';
 import 'package:plug/extensions/string.dart';
 import 'package:plug/models/order.dart';
 import 'package:plug/utils/ui_spacer.dart';
+import 'package:plug/widgets/currency_hstack.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class TaxiOrderListItem extends StatelessWidget {
@@ -21,6 +22,11 @@ class TaxiOrderListItem extends StatelessWidget {
   final Function orderPressed;
   @override
   Widget build(BuildContext context) {
+    //
+    final currencySymbol = order.taxiOrder.currency != null
+        ? order.taxiOrder.currency.symbol
+        : AppStrings.currencySymbol;
+    //
     return VStack(
       [
         //
@@ -64,13 +70,12 @@ class TaxiOrderListItem extends StatelessWidget {
         HStack(
           [
             //price
-            "${order.taxiOrder.currency != null ? order.taxiOrder.currency.symbol : AppStrings.currencySymbol}${order.total}"
-                .currencyFormat()
-                .text
-                .semiBold
-                .xl
-                .make()
-                .expand(),
+            CurrencyHStack(
+              [
+                "$currencySymbol ".text.semiBold.xl.make(),
+                "${order.total.currencyValueFormat()}".text.semiBold.xl.make()
+              ],
+            ).expand(),
             //status
             "${order.Taxistatus.allWordsCapitilize() ?? ''}"
                 .text
