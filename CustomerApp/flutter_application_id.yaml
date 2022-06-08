@@ -1,0 +1,7 @@
+flutter_application_id:
+  android:
+    id: "com.plug.delivery.app"
+    name: "Plug"
+  ios:
+    id: "com.plug.delivery.app"
+    name: "Plug"

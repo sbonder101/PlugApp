@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "82941611557",
+    "project_id": "kasi-grosa",
+    "storage_bucket": "kasi-grosa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82941611557:android:97f067c2e3b544393479cc",
+        "android_client_info": {
+          "package_name": "com.plug.delivery.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82941611557-43155jbg96oojlmefu5hq5f07urn9l3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plug.delivery.app",
+            "certificate_hash": "0897becb93342a2dcf2686d3b291d0ffbfb58a01"
+          }
+        },
+        {
+          "client_id": "82941611557-kr8qhl86f650mk02ljo4r5riocrfucin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7gPSORkfn6C2RQi-KrXDT7ksJYp_k7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82941611557-kr8qhl86f650mk02ljo4r5riocrfucin.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "82941611557-t50b31e0qde4sh4r8jk1u5luctj3lhoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.plug.delivery.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

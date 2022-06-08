@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/sign_in_with_apple/intermediates/incremental/mergeReleaseResources/merged.dir/values-bn/values-bn.xml",
+            "map": [
+                {
+                    "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/7022ec036f4ca32903f3777a1a7d2bcf/browser-1.2.0/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,263,372",
+                        "endColumns": "105,101,108,104",
+                        "endOffsets": "156,258,367,472"
+                    }
+                },
+                {
+                    "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/70053ee5f7b84667609ea5226578eb7a/core-1.6.0/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "477",
+                        "endColumns": "100",
+                        "endOffsets": "573"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/snzimande/Documents/Personal/Apps/Plug/Development/Apps/Customer/CustomerApp/build/sign_in_with_apple/intermediates/res/merged/release/values-bn/values-bn.xml",
+            "map": [
+                {
+                    "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/7022ec036f4ca32903f3777a1a7d2bcf/browser-1.2.0/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,263,372",
+                        "endColumns": "105,101,108,104",
+                        "endOffsets": "156,258,367,472"
+                    }
+                },
+                {
+                    "source": "/Users/snzimande/.gradle/caches/transforms-2/files-2.1/70053ee5f7b84667609ea5226578eb7a/core-1.6.0/res/values-bn/values-bn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "477",
+                        "endColumns": "100",
+                        "endOffsets": "573"
+                    }
+                }
+            ]
+        }
+    ]
+}

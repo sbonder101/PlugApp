@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_notification_channel_id" translatable="false">2021</string>
+    <string name="app_name">Plug</string>
+    <string name="facebook_app_id">511138190795875</string>
+    <string name="fb_login_protocol_scheme">fb511138190795875</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">82941611557-kr8qhl86f650mk02ljo4r5riocrfucin.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">82941611557</string>
+    <string name="google_api_key" translatable="false">AIzaSyCR7gPSORkfn6C2RQi-KrXDT7ksJYp_k7E</string>
+    <string name="google_app_id" translatable="false">1:82941611557:android:97f067c2e3b544393479cc</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCR7gPSORkfn6C2RQi-KrXDT7ksJYp_k7E</string>
+    <string name="google_storage_bucket" translatable="false">kasi-grosa.appspot.com</string>
+    <string name="project_id" translatable="false">kasi-grosa</string>
+</resources>
